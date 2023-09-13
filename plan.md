@@ -23,6 +23,13 @@
 - Oppfølling av order
   - Med bruker eller bare epost og noe for å validere greia
 
+## Dashboard
+
+- Order liste
+- Status bøtter med teller
+- Teller hvor mange som har sett på siden
+- Liste over eposter som ikke har blitt tatt kontakt med
+
 ## Stack
 
 - Front end

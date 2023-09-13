@@ -1,69 +1,101 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
 }
 
 body {
-  margin: 0;
+  font-size: 32px;
+  font-family: "Barlow", sans-serif;
+}
+
+:root {
+  --Black: #1b1821;
+  --Ivory: #fffae5;
+  --Tan: #925f4c;
+  --Carafe: #56382d;
+  --content-width: 1400px;
+}
+
+#root {
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+  width: 100%;
+  height: 100vh;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.darkMode {
+  --main-bg-color: var(--Black);
+  --main-font-color: var(--Ivory);
+  --sec-color: var(--Carafe);
+  --ter-color: var(--Tan);
+  --button-font-color: var(--Ivory);
+}
+
+.lightMode {
+  --main-bg-color: var(--Ivory);
+  --main-font-color: var(--Black);
+  --sec-color: var(--Tan);
+  --ter-color: var(--Carafe);
+  --button-font-color: var(--Ivory);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.618em;
+}
+
+h2 {
+  font-size: 1.618em;
+}
+
+p,
+h3 {
+  font-size: 1em;
+}
+
+a {
+  all: unset;
+}
+
+header,
+main {
+  width: var(--content-width);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  color: var(--button-font-color);
+  background-color: var(--sec-color);
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border-width: 0;
 }
 
-@media (prefers-color-scheme: light) {
+input[type="number"] {
+  font-size: 1em;
+  background-color: var(--sec-color);
+  color: var(--button-font-color);
+  padding: 10px;
+  border-radius: 10px;
+  width: 80px;
+  margin-left: 10px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1500px) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --content-width: calc(100% - 100px);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+.test {
+  max-width: 100%;
+  max-height: 100%;
 }

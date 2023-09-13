@@ -1,0 +1,123 @@
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: var(--main-font-color);
+  outline: none;
+  opacity: 0.7;
+  border-radius: 12px;
+  -webkit-transition: 0.5s;
+  transition: opacity 0.5s;
+  margin: 20px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  border: 1px solid var(--sec-color);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: var(--ter-color);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  height: 37.5px;
+  width: 37.5px;
+  background: var(--main-font-color);
+  opacity: 0.7;
+  transition: opacity 0.5s;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  opacity: 1;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  transition: opacity 0.5s;
+  content: "";
+  opacity: 0;
+  display: block;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+  opacity: 1;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  margin-left: 9px;
+  margin-top: -2px;
+  width: 15px;
+  height: 30px;
+  border: solid var(--sec-color);
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+}
+
+.mSqareWrapper {
+  width: 18%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mSqareWrapper label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.m2wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 11.5px 0 11.5px 0;
+}
+
+.rangeWrapper {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

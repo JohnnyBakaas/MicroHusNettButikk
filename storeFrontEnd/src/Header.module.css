@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--main-font-color);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav a {
+  margin-right: 50px;
+}
