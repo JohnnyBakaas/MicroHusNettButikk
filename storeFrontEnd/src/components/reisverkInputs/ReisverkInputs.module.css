@@ -87,7 +87,7 @@
   transform: rotate(45deg);
 }
 
-.contentWrapper {
+.dimentionWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,4 +120,37 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.roofWrapper {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.roofCard {
+  background-color: var(--sec-color);
+  padding: 10px 50px 10px;
+  border-radius: 10px;
+}
+
+.sagtakPoligon,
+.saltakPoligon,
+.pulttakPoligon {
+  width: 200px;
+  height: 200px;
+  background-color: var(--main-font-color);
+}
+
+.pulttakPoligon {
+  clip-path: polygon(0 39%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.saltakPoligon {
+  clip-path: polygon(50% 0%, 100% 39%, 100% 100%, 0 100%, 0% 39%);
+}
+
+.sagtakPoligon {
+  clip-path: polygon(81% 0, 100% 39%, 100% 100%, 0 100%, 0 39%);
 }

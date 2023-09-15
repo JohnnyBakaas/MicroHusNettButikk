@@ -53,114 +53,131 @@ const ReisverkInputs = ({
   }, [isMikrohus]);
 
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.mSqareWrapper}>
-        <label htmlFor="squareInput">
-          <h3>max m2</h3>
-          <input
-            id="squareInput"
-            type="number"
-            min={10}
-            value={maxM2}
-            onChange={(e) => {
-              const newVal = Number(e.target.value);
-              if (!isMikrohus) {
-                setMaxM2(newVal);
-              } else {
-                if (newVal <= 30) {
+    <>
+      <div className={styles.dimentionWrapper}>
+        <div className={styles.mSqareWrapper}>
+          <label htmlFor="squareInput">
+            <h3>max m2</h3>
+            <input
+              id="squareInput"
+              type="number"
+              min={10}
+              value={maxM2}
+              onChange={(e) => {
+                const newVal = Number(e.target.value);
+                if (!isMikrohus) {
                   setMaxM2(newVal);
+                } else {
+                  if (newVal <= 30) {
+                    setMaxM2(newVal);
+                  }
                 }
-              }
-            }}
-          />
-        </label>
-        <label htmlFor="microHus" className={styles.container}>
-          <h3>Microhus?</h3>
-          <input
-            type="checkbox"
-            id="microHus"
-            className={styles.microHusCheckbox}
-            checked={isMikrohus}
-            onChange={() => {
-              setIsMikrohus((pre) => !pre);
-            }}
-          />
-          <span className={styles.checkmark}></span>
-        </label>
-        <div className={styles.m2wrapper}>
-          <h3>m2: </h3>
-          <p>{m2}</p>
+              }}
+            />
+          </label>
+          <label htmlFor="microHus" className={styles.container}>
+            <h3>Microhus?</h3>
+            <input
+              type="checkbox"
+              id="microHus"
+              className={styles.microHusCheckbox}
+              checked={isMikrohus}
+              onChange={() => {
+                setIsMikrohus((pre) => !pre);
+              }}
+            />
+            <span className={styles.checkmark}></span>
+          </label>
+          <div className={styles.m2wrapper}>
+            <h3>m2: </h3>
+            <p>{m2.toFixed(2)}</p>
+          </div>
+        </div>
+
+        <div className={styles.rangeWrapper}>
+          <label htmlFor="x">
+            <h3 className={styles.h3}>X</h3>
+            <input
+              className={styles.slider}
+              id="x"
+              type="range"
+              min={1}
+              max={maxX}
+              value={x}
+              step="0.1"
+              onChange={(e) => setX(Number(e.target.value))}
+            />
+            <input
+              type="number"
+              min={1}
+              max={maxX}
+              value={x}
+              step="0.1"
+              onChange={(e) => setX(Number(e.target.value))}
+            />
+          </label>
+
+          <label htmlFor="y">
+            <h3 className={styles.h3}>Y</h3>
+            <input
+              className={styles.slider}
+              id="y"
+              type="range"
+              min={1}
+              max={maxY}
+              value={y}
+              step="0.1"
+              onChange={(e) => setY(Number(e.target.value))}
+            />
+            <input
+              type="number"
+              min={1}
+              max={maxY}
+              value={y}
+              step="0.1"
+              onChange={(e) => setY(Number(e.target.value))}
+            />
+          </label>
+
+          <label htmlFor="z">
+            <h3 className={styles.h3}>Z</h3>
+            <input
+              className={styles.slider}
+              id="z"
+              type="range"
+              min={2.5}
+              max={4.4}
+              value={z}
+              step="0.1"
+              onChange={(e) => setZ(Number(e.target.value))}
+            />
+            <input
+              type="number"
+              min={2.5}
+              max={4.4}
+              value={z}
+              step="0.1"
+              onChange={(e) => setZ(Number(e.target.value))}
+            />
+          </label>
         </div>
       </div>
 
-      <div className={styles.rangeWrapper}>
-        <label htmlFor="x">
-          <h3 className={styles.h3}>X</h3>
-          <input
-            className={styles.slider}
-            id="x"
-            type="range"
-            min={1}
-            max={maxX}
-            value={x}
-            step="0.1"
-            onChange={(e) => setX(Number(e.target.value))}
-          />
-          <input
-            type="number"
-            min={1}
-            max={maxX}
-            value={x}
-            step="0.1"
-            onChange={(e) => setX(Number(e.target.value))}
-          />
-        </label>
-
-        <label htmlFor="y">
-          <h3 className={styles.h3}>Y</h3>
-          <input
-            className={styles.slider}
-            id="y"
-            type="range"
-            min={1}
-            max={maxY}
-            value={y}
-            step="0.1"
-            onChange={(e) => setY(Number(e.target.value))}
-          />
-          <input
-            type="number"
-            min={1}
-            max={maxY}
-            value={y}
-            step="0.1"
-            onChange={(e) => setY(Number(e.target.value))}
-          />
-        </label>
-
-        <label htmlFor="z">
-          <h3 className={styles.h3}>Z</h3>
-          <input
-            className={styles.slider}
-            id="z"
-            type="range"
-            min={2.5}
-            max={4.4}
-            value={z}
-            step="0.1"
-            onChange={(e) => setZ(Number(e.target.value))}
-          />
-          <input
-            type="number"
-            min={2.5}
-            max={4.4}
-            value={z}
-            step="0.1"
-            onChange={(e) => setZ(Number(e.target.value))}
-          />
-        </label>
+      <div className={styles.roofWrapper}>
+        <div className={styles.roofCard}>
+          <div className={styles.saltakPoligon}></div>
+          <h3>Saltak</h3>
+        </div>
+        <div className={styles.roofCard}>
+          <div className={styles.pulttakPoligon}></div>
+          <h3>Pulttak</h3>
+        </div>
+        <div className={styles.roofCard}>
+          <div className={styles.sagtakPoligon}></div>
+          <h3>Sagtak</h3>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -12,7 +12,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Link to={`/`}>
-        <h1>BAKAAS REISVERK</h1>
+        <h1 className={styles.fullName}>BAKAAS REISVERK</h1>
+        <h1 className={styles.shortName}>BR</h1>
       </Link>
       <nav className={styles.nav}>
         <Link to={`/blog`}>

@@ -11,10 +11,7 @@ const Reisverk = () => {
 
   return (
     <main>
-      <h1>Reisverk</h1>
-      <p>La oss starte</p>
-
-      <ReisverkRender />
+      <ReisverkRender x={x} y={y} z={z} />
 
       <ReisverkInputs
         maxM2={maxM2}
