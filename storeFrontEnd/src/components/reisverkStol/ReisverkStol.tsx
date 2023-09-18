@@ -1,25 +1,24 @@
 import { Shape } from "three";
 
-const ReisverkStol = () => {
+type ReisverkStolProps = {
+  width: number;
+  height: number;
+  yOffset: number;
+};
+
+const ReisverkStol = ({ width, height, yOffset }: ReisverkStolProps) => {
   const roofIndex = 0;
+  const roofStyles = [pulttak];
   const lumberWidth = 98 / 1000;
   const lubmerDebth = 48 / 1000;
-  const frameWith = 3000 / 1000;
-  const frameHeight = 2400 / 1000;
-
-  if (false)
-    return (
-      <mesh>
-        <shapeGeometry args={[getShape(frameWith, frameHeight, lumberWidth)]} />
-        <meshStandardMaterial color="orange" />
-      </mesh>
-    );
+  const frameWith = width;
+  const frameHeight = height;
 
   return (
-    <mesh>
+    <mesh position={[0, 0, yOffset / 10]}>
       <extrudeGeometry
         args={[
-          getShapeTwo(frameWith, frameHeight, lumberWidth),
+          roofStyles[roofIndex](frameWith, frameHeight, lumberWidth),
           getExtrudeSettings(lubmerDebth),
         ]}
       />
@@ -49,8 +48,12 @@ const getShape = (width: number, height: number, lumberWidth: number) => {
   return shape;
 };
 
-const getShapeTwo = (width: number, height: number, lumberWidth: number) => {
-  const offset = 1;
+const pulttak = (width: number, height: number, lumberWidth: number) => {
+  const angle = 20;
+
+  const offset = width * Math.tan((angle * Math.PI) / 180);
+  const innerOffsetRight = lumberWidth * Math.tan((angle * Math.PI) / 180);
+
   const shape = new Shape();
 
   shape.moveTo(0, 0);
@@ -62,11 +65,16 @@ const getShapeTwo = (width: number, height: number, lumberWidth: number) => {
 
   shape.lineTo(lumberWidth, lumberWidth);
   shape.lineTo(lumberWidth, height - offset - lumberWidth);
-  shape.lineTo(width - lumberWidth, height - lumberWidth);
+  shape.lineTo(
+    width - lumberWidth,
+    height - lumberWidth - innerOffsetRight - innerOffsetRight
+  );
   shape.lineTo(width - lumberWidth, lumberWidth);
   shape.lineTo(0, lumberWidth);
 
   return shape;
+  // https://www.youtube.com/watch?v=PUB0TaZ7bhA
+  // 11:20
 };
 
 const getExtrudeSettings = (thickness: number) => {
