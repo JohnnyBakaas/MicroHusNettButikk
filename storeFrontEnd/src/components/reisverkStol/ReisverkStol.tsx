@@ -17,7 +17,7 @@ const ReisverkStol = ({
   roofIndex,
 }: ReisverkStolProps) => {
   useFrame((state, delta) => {});
-  const roofStyles = [saltak, pulttak];
+  const roofStyles = [saltak, pulttak, sagtak];
   const lumberWidth = 98 / 1000;
   const lubmerDebth = 48 / 1000;
   const frameWith = width;
@@ -53,6 +53,33 @@ const getExtrudeSettings = (thickness: number) => {
   return extrudeSettings;
 };
 
+const saltak = (width: number, height: number, lumberWidth: number) => {
+  const roofAngle = 20;
+
+  const offset = (width / 2) * Math.tan((roofAngle * Math.PI) / 180);
+
+  const shape = new Shape();
+
+  shape.moveTo(0, 0);
+  shape.lineTo(width, 0);
+  shape.lineTo(width, height - offset);
+  shape.lineTo(width / 2, height);
+  shape.lineTo(0, height - offset);
+
+  shape.lineTo(0, lumberWidth);
+
+  shape.lineTo(lumberWidth, lumberWidth);
+  shape.lineTo(lumberWidth, height - offset - lumberWidth);
+  shape.lineTo(width / 2, height - lumberWidth);
+  shape.lineTo(width - lumberWidth, height - offset - lumberWidth);
+  shape.lineTo(width - lumberWidth, lumberWidth);
+  shape.lineTo(0, lumberWidth);
+
+  return shape;
+  // https://www.youtube.com/watch?v=PUB0TaZ7bhA
+  // 11:20
+};
+
 const pulttak = (width: number, height: number, lumberWidth: number) => {
   const roofAngle = 20;
 
@@ -82,25 +109,28 @@ const pulttak = (width: number, height: number, lumberWidth: number) => {
   // 11:20
 };
 
-const saltak = (width: number, height: number, lumberWidth: number) => {
-  const roofAngle = 20;
+const sagtak = (width: number, height: number, lumberWidth: number) => {
+  const slopeAngle = 22; // 4.6 ganger lenger 77%
 
-  const offset = (width / 2) * Math.tan((roofAngle * Math.PI) / 180);
-  const innerOffsetRight = lumberWidth * Math.tan((roofAngle * Math.PI) / 180);
+  const offset = width * Math.tan((slopeAngle * Math.PI) / 180);
+  const innerOffsetRight = lumberWidth * Math.tan((slopeAngle * Math.PI) / 180);
 
   const shape = new Shape();
 
   shape.moveTo(0, 0);
   shape.lineTo(width, 0);
   shape.lineTo(width, height - offset);
-  shape.lineTo(width / 2, height);
+  shape.lineTo(width - width / 4.6, height);
   shape.lineTo(0, height - offset);
 
   shape.lineTo(0, lumberWidth);
 
   shape.lineTo(lumberWidth, lumberWidth);
   shape.lineTo(lumberWidth, height - offset - lumberWidth);
-  shape.lineTo(width / 2, height - lumberWidth);
+  shape.lineTo(
+    width - width / 4.6 - innerOffsetRight,
+    height - lumberWidth - innerOffsetRight
+  );
   shape.lineTo(width - lumberWidth, height - offset - lumberWidth);
   shape.lineTo(width - lumberWidth, lumberWidth);
   shape.lineTo(0, lumberWidth);

@@ -127,6 +127,108 @@ const LongFrame = ({
         </mesh>
       </>
     );
+  if (roofIndex == 2)
+    return (
+      <>
+        <mesh position={[0, 0, -renderOffset]}>
+          <extrudeGeometry
+            args={[
+              plank(lubmerDebth, lumberWidth, lumberWidth),
+              getExtrudeSettings(depth),
+            ]}
+          />
+        </mesh>
+        <mesh position={[width - lubmerDebth, 0, -renderOffset]}>
+          <extrudeGeometry
+            args={[
+              plank(lubmerDebth, lumberWidth, lumberWidth),
+              getExtrudeSettings(depth),
+            ]}
+          />
+        </mesh>
+        <mesh
+          position={[
+            width - lubmerDebth,
+            height - width * Math.tan((22 * Math.PI) / 180) - lumberWidth * 2,
+            -renderOffset,
+          ]}
+        >
+          <extrudeGeometry
+            args={[
+              plank(lubmerDebth, lumberWidth, lumberWidth),
+              getExtrudeSettings(depth),
+            ]}
+          />
+        </mesh>
+        <mesh
+          position={[
+            0,
+            height - width * Math.tan((22 * Math.PI) / 180) - lumberWidth * 2,
+            -renderOffset,
+          ]}
+        >
+          <extrudeGeometry
+            args={[
+              plank(lubmerDebth, lumberWidth, lumberWidth),
+              getExtrudeSettings(depth),
+            ]}
+          />
+        </mesh>
+      </>
+    );
+
+  return (
+    <>
+      <mesh position={[0, 0, -renderOffset]}>
+        <extrudeGeometry
+          args={[
+            plank(lubmerDebth, lumberWidth, lumberWidth),
+            getExtrudeSettings(depth),
+          ]}
+        />
+      </mesh>
+      <mesh position={[width - lubmerDebth, 0, -renderOffset]}>
+        <extrudeGeometry
+          args={[
+            plank(lubmerDebth, lumberWidth, lumberWidth),
+            getExtrudeSettings(depth),
+          ]}
+        />
+      </mesh>
+      <mesh
+        position={[
+          width - lubmerDebth,
+          height -
+            (width / 2) * Math.tan((roofAngle * Math.PI) / 180) -
+            lumberWidth * 2,
+          -renderOffset,
+        ]}
+      >
+        <extrudeGeometry
+          args={[
+            plank(lubmerDebth, lumberWidth, lumberWidth),
+            getExtrudeSettings(depth),
+          ]}
+        />
+      </mesh>
+      <mesh
+        position={[
+          0,
+          height -
+            (width / 2) * Math.tan((roofAngle * Math.PI) / 180) -
+            lumberWidth * 2,
+          -renderOffset,
+        ]}
+      >
+        <extrudeGeometry
+          args={[
+            plank(lubmerDebth, lumberWidth, lumberWidth),
+            getExtrudeSettings(depth),
+          ]}
+        />
+      </mesh>
+    </>
+  );
 };
 
 export default LongFrame;
