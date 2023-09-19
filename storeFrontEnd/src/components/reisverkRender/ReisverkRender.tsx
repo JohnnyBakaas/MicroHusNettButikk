@@ -3,15 +3,18 @@ import { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import ReisverkStol from "../reisverkStol/ReisverkStol";
+import LongFrame from "../longFrame/LongFrame";
 
 export type TestBoxProps = {
   x: number;
   y: number;
   z: number;
+  roofIndex: number;
 };
 
-const ReisverkRender = ({ x, y, z }: TestBoxProps) => {
+const ReisverkRender = ({ x, y, z, roofIndex }: TestBoxProps) => {
   const [positions, setPositions] = useState<number[]>([]);
+  const roofAngle = 20;
 
   const calcPositiions = () => {
     let pos = 0;
@@ -25,12 +28,15 @@ const ReisverkRender = ({ x, y, z }: TestBoxProps) => {
       positions.push(y * 10);
     }
 
+    positions[positions.length - 1] =
+      positions[positions.length - 1] - 48 / 100;
+
     return positions;
   };
 
   useEffect(() => {
     setPositions(calcPositiions());
-  }, [y]);
+  }, [x, y, z, roofIndex]);
 
   return (
     <div className={styles.canvasWrapper}>
@@ -39,8 +45,24 @@ const ReisverkRender = ({ x, y, z }: TestBoxProps) => {
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[10, 10, 10]} />
         {positions.map((e) => {
-          return <ReisverkStol width={x} height={z} key={e} yOffset={e} />;
+          return (
+            <ReisverkStol
+              width={x}
+              height={z}
+              key={e}
+              yOffset={e}
+              roofAngle={roofAngle}
+              roofIndex={roofIndex}
+            />
+          );
         })}
+        <LongFrame
+          width={x}
+          height={z}
+          depth={y}
+          roofAngle={roofAngle}
+          roofIndex={roofIndex}
+        />
         <OrbitControls />
       </Canvas>
     </div>

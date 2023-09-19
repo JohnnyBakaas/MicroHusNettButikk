@@ -164,11 +164,11 @@ const ReisverkInputs = ({
       </div>
 
       <div className={styles.roofWrapper}>
-        <div className={styles.roofCard}>
+        <div className={styles.roofCard} onClick={() => setRoofIndex(0)}>
           <div className={styles.saltakPoligon}></div>
           <h3>Saltak</h3>
         </div>
-        <div className={styles.roofCard}>
+        <div className={styles.roofCard} onClick={() => setRoofIndex(1)}>
           <div className={styles.pulttakPoligon}></div>
           <h3>Pulttak</h3>
         </div>
