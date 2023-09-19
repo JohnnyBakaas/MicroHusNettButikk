@@ -18,7 +18,7 @@ const LongFrame = ({
   roofAngle,
   roofIndex,
 }: LongFrameProps) => {
-  useFrame((state, delta) => {});
+  useFrame((_state, _delta) => {});
   const lumberWidth = 98 / 1000;
   const lubmerDebth = 48 / 1000;
 
@@ -233,7 +233,7 @@ const LongFrame = ({
 
 export default LongFrame;
 
-const plank = (width: number, height: number, lumberWidth: number) => {
+const plank = (width: number, height: number, _lumberWidth: number) => {
   const shape = new Shape();
 
   shape.moveTo(-renderOffset, -renderOffset);

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Header from "./Header.tsx";
 import Blog from "./routes/Blog.tsx";
 import Home from "./routes/Home.tsx";
 import Reisverk from "./routes/Reisverk.tsx";

@@ -16,12 +16,15 @@ const ReisverkStol = ({
   roofAngle,
   roofIndex,
 }: ReisverkStolProps) => {
-  useFrame((state, delta) => {});
+  useFrame((_state, _delta) => {});
   const roofStyles = [saltak, pulttak, sagtak];
   const lumberWidth = 98 / 1000;
   const lubmerDebth = 48 / 1000;
   const frameWith = width;
   const frameHeight = height;
+
+  if (roofAngle) {
+  }
 
   return (
     <>
