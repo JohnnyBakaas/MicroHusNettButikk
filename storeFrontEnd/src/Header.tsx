@@ -20,7 +20,7 @@ const Header = () => {
           <h2>Blog</h2>
         </Link>
         <Link to={`/reisverk`}>
-          <h2>Reisverk</h2>
+          <h2>Bestill</h2>
         </Link>
         <button onClick={() => setDarkMode((pre) => !pre)}>
           {darkMode ? "darkMode" : "lightMode"}

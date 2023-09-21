@@ -96,7 +96,8 @@
 }
 
 .mSqareWrapper {
-  width: 18%;
+  margin-right: 20px;
+  width: 250px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -131,15 +132,15 @@
 
 .roofCard {
   background-color: var(--sec-color);
-  padding: 10px 50px 10px;
+  padding: 2vw 2vw 2vw;
   border-radius: 10px;
 }
 
 .sagtakPoligon,
 .saltakPoligon,
 .pulttakPoligon {
-  width: 200px;
-  height: 200px;
+  width: 20vw;
+  height: 20vw;
   background-color: var(--main-font-color);
 }
 
@@ -153,4 +154,20 @@
 
 .sagtakPoligon {
   clip-path: polygon(81% 0, 100% 39%, 100% 100%, 0 100%, 0 39%);
+}
+
+@media (max-width: 800px) {
+  .rangeWrapper {
+    width: 100%;
+  }
+
+  .mSqareWrapper {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  .dimentionWrapper {
+    flex-direction: column;
+    height: auto;
+  }
 }

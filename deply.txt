@@ -1,0 +1,4 @@
+npm run build
+netlify build
+netlify deploy
+netlify deploy --prod
