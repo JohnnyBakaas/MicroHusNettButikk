@@ -96,6 +96,8 @@ label {
   }
 }
 
-.threeJsFrame {
-  height: 1000px;
+@media (max-width: 500px) {
+  :root {
+    --content-width: calc(100% - 30px);
+  }
 }

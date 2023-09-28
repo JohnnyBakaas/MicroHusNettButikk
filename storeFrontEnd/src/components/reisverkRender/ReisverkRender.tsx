@@ -44,25 +44,27 @@ const ReisverkRender = ({ x, y, z, roofIndex }: TestBoxProps) => {
         <ambientLight />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[10, 10, 10]} />
-        {positions.map((e) => {
-          return (
-            <ReisverkStol
-              width={x}
-              height={z}
-              key={e}
-              yOffset={e}
-              roofAngle={roofAngle}
-              roofIndex={roofIndex}
-            />
-          );
-        })}
-        <LongFrame
-          width={x}
-          height={z}
-          depth={y}
-          roofAngle={roofAngle}
-          roofIndex={roofIndex}
-        />
+        <group position={[-x / 2, -2, -y / 2]}>
+          {positions.map((e) => {
+            return (
+              <ReisverkStol
+                width={x}
+                height={z}
+                key={e}
+                yOffset={e}
+                roofAngle={roofAngle}
+                roofIndex={roofIndex}
+              />
+            );
+          })}
+          <LongFrame
+            width={x}
+            height={z}
+            depth={y}
+            roofAngle={roofAngle}
+            roofIndex={roofIndex}
+          />
+        </group>
         <OrbitControls />
       </Canvas>
     </div>

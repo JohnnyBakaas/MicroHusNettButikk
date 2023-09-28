@@ -28,4 +28,8 @@
   .shortName {
     display: block;
   }
+
+  .nav {
+    display: none;
+  }
 }
