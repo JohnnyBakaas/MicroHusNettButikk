@@ -41,9 +41,8 @@ const ReisverkRender = ({ x, y, z, roofIndex }: TestBoxProps) => {
   return (
     <div className={styles.canvasWrapper}>
       <Canvas camera={{ position: [5, 3, 10] }}>
-        <ambientLight />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <pointLight position={[10, 10, 10]} />
+        <ambientLight color="#ffffff" intensity={0.3} />
+        <pointLight position={[4, 4, 4]} intensity={100} />
         <group position={[-x / 2, -2, -y / 2]}>
           {positions.map((e) => {
             return (

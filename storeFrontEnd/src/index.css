@@ -101,3 +101,9 @@ label {
     --content-width: calc(100% - 30px);
   }
 }
+
+@media (max-width: 350px) {
+  body {
+    font-size: 20px;
+  }
+}

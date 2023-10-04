@@ -1,3 +1,5 @@
+import ModelTest from "../components/modelTest/ModelTest";
+
 const Blog = () => {
   return (
     <main>
@@ -5,6 +7,7 @@ const Blog = () => {
       <h2>Lorem ipsum</h2>
       <h3>Lorem ipsum</h3>
       <p>Lorem ipsum</p>
+      <ModelTest />
     </main>
   );
 };

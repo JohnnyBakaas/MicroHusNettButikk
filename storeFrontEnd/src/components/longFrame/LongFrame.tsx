@@ -11,6 +11,10 @@ type LongFrameProps = {
   roofIndex: number;
 };
 
+const Material = () => {
+  return <meshStandardMaterial color="white" />;
+};
+
 const LongFrame = ({
   width,
   height,
@@ -32,6 +36,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
         <mesh position={[width - lubmerDebth, 0, -renderOffset]}>
           <extrudeGeometry
@@ -40,6 +45,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
         <mesh
           position={[
@@ -56,6 +62,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
         <mesh
           position={[
@@ -72,6 +79,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
       </>
     );
@@ -86,6 +94,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
         <mesh position={[width - lubmerDebth, 0, -renderOffset]}>
           <extrudeGeometry
@@ -94,6 +103,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
         <mesh
           position={[
@@ -108,6 +118,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
         <mesh
           position={[
@@ -124,6 +135,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
       </>
     );
@@ -137,6 +149,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
         <mesh position={[width - lubmerDebth, 0, -renderOffset]}>
           <extrudeGeometry
@@ -145,6 +158,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
         <mesh
           position={[
@@ -159,6 +173,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
         <mesh
           position={[
@@ -173,6 +188,7 @@ const LongFrame = ({
               getExtrudeSettings(depth),
             ]}
           />
+          <Material />
         </mesh>
       </>
     );
@@ -186,6 +202,7 @@ const LongFrame = ({
             getExtrudeSettings(depth),
           ]}
         />
+        <Material />
       </mesh>
       <mesh position={[width - lubmerDebth, 0, -renderOffset]}>
         <extrudeGeometry
@@ -194,6 +211,7 @@ const LongFrame = ({
             getExtrudeSettings(depth),
           ]}
         />
+        <Material />
       </mesh>
       <mesh
         position={[
@@ -210,6 +228,7 @@ const LongFrame = ({
             getExtrudeSettings(depth),
           ]}
         />
+        <Material />
       </mesh>
       <mesh
         position={[
@@ -226,6 +245,7 @@ const LongFrame = ({
             getExtrudeSettings(depth),
           ]}
         />
+        <Material />
       </mesh>
     </>
   );

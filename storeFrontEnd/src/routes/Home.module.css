@@ -1,0 +1,24 @@
+.bigImgAndTextWrapper {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.673), rgba(0, 0, 0, 0.678)),
+    url("http://lh3.googleusercontent.com/-nGfw7ybLUmU/VbFIXY4c1tI/AAAAAAAALlY/7_mXV97J6Us/s640/20150723_203909.jpg");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.bigImgAndTextWrapper h1 {
+  color: var(--Ivory);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  width: fit-content;
+}
+
+.textStuff p {
+  padding-bottom: 10px;
+}
