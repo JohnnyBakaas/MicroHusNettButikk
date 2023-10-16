@@ -10,6 +10,11 @@
   background-position: center;
 }
 
+.reisverk {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.673), rgba(0, 0, 0, 0.678)),
+    url("http://lh3.googleusercontent.com/-nGfw7ybLUmU/VbFIXY4c1tI/AAAAAAAALlY/7_mXV97J6Us/s640/20150723_203909.jpg");
+}
+
 .bigImgAndTextWrapper h1 {
   color: var(--Ivory);
   position: absolute;
@@ -21,4 +26,9 @@
 
 .textStuff p {
   padding-bottom: 10px;
+}
+
+.plankePakke {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.673), rgba(0, 0, 0, 0.678)),
+    url("https://nelson-homes.com/media/images/House_plans_prefab_homes_modular.2e16d0ba.fill-1920x1080_Sn3kzjn.jpg");
 }

@@ -14,7 +14,7 @@ const ModelTest = () => {
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[10, 10, 10]} />
         <mesh>
-          <ObjModel url="public/models/husXDDDD.obj" />
+          <ObjModel url="/models/husXDDDD.obj" />
           <meshStandardMaterial color="orange" />
         </mesh>
         <OrbitControls />

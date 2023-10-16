@@ -3,7 +3,7 @@ import styles from "./Home.module.css";
 const Home = () => {
   return (
     <main>
-      <div className={styles.bigImgAndTextWrapper}>
+      <div className={`${styles.bigImgAndTextWrapper} ${styles.reisverk}`}>
         <h1>Få reisverket på plass på dagen</h1>
       </div>
       <div className={styles.textStuff}>
@@ -21,6 +21,26 @@ const Home = () => {
           dekkes med lufteventiler og vindu som åpnes, VVS krever bare innendørs
           toalet, kjøkkenfunksjon og baderomsfunksjon.
         </p>
+      </div>
+
+      <div className={`${styles.bigImgAndTextWrapper} ${styles.plankePakke}`}>
+        <h1>Prossesen er kjapp og enkel</h1>
+      </div>
+
+      <div className={styles.textStuff}>
+        <h2>Flatpakket</h2>
+        <p>
+          Du kan få hele reisverket levert på en bil henger så det er ikke
+          nødvendig med lastebil og store spor i plenen.
+        </p>
+        <p>Forklaring av flatpakket hus som kommer på henger</p>
+
+        <h2>Bygg stoler</h2>
+        <p>Forklaring av hvordan de tak stol greiene fungerer</p>
+      </div>
+
+      <div className={`${styles.bigImgAndTextWrapper} ${styles.plankePakke}`}>
+        <h1></h1>
       </div>
     </main>
   );
