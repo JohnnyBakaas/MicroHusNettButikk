@@ -12,12 +12,40 @@
 
 .imgContainer {
   width: 95%;
-  height: 200px;
+  height: 100%;
   margin: 2.5%;
   background-color: orange;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-size: cover;
 }
 
 .card h2,
 .card h3 {
   margin-left: 2.5%;
+}
+
+@media (max-width: 1499px) {
+  .card:nth-child(3n) {
+    margin-right: 10px;
+  }
+
+  .card:nth-child(2n) {
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 1019px) {
+  .card {
+    margin-right: 0px;
+  }
+
+  .card:nth-child(3n) {
+    margin-right: 0px;
+  }
+
+  .card:nth-child(2n) {
+    margin-right: 0px;
+  }
 }

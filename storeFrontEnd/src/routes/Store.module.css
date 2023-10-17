@@ -3,3 +3,15 @@
   flex-wrap: wrap;
   height: fit-content;
 }
+
+@media (max-width: 1499px) {
+  .main {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1029px) {
+  .main {
+    justify-content: center;
+  }
+}
