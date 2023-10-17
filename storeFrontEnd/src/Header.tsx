@@ -27,9 +27,11 @@ const Header = () => {
         <Link to={`/reisverk`}>
           <h2>Bestill</h2>
         </Link>
+        {/*
         <button onClick={() => setDarkMode((pre) => !pre)}>
           {darkMode ? "darkMode" : "lightMode"}
         </button>
+          */}
       </nav>
     </header>
   );

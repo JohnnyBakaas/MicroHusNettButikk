@@ -1,0 +1,27 @@
+.card {
+  background-color: var(--sec-color);
+  width: calc(50% - 5px);
+  min-height: 490px;
+  margin-bottom: 10px;
+}
+
+.imgContainer {
+  width: 95%;
+  height: 100%;
+  margin: 2.5%;
+  background-color: orange;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-size: cover;
+}
+
+.textWrapper {
+  margin: 0 2.5% 2.5% 2.5%;
+}
+
+@media (max-width: 800px) {
+  .card {
+    width: 100%;
+  }
+}
