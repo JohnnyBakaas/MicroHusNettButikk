@@ -5,7 +5,6 @@ export type StoreArticleCardPros = {
   name: string;
   images: string[];
   lowPrice: number;
-  highPrice: number;
   description: string;
 };
 
@@ -13,7 +12,6 @@ const StoreArticleCard = ({
   name,
   images,
   lowPrice,
-  highPrice,
   description,
 }: StoreArticleCardPros) => {
   return (
@@ -31,9 +29,7 @@ const StoreArticleCard = ({
       </Carousel>
       <div className={styles.textWrapper}>
         <h2>{name}</h2>
-        <h3>
-          {formatNumber(lowPrice)} - {formatNumber(highPrice)} kr
-        </h3>
+        <h3>Starter: {formatNumber(lowPrice)} kr</h3>
         <p>{description}</p>
       </div>
     </div>

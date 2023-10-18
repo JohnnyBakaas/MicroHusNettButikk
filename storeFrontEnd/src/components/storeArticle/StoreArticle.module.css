@@ -17,3 +17,16 @@
 .test {
   height: 50%;
 }
+
+.titelPricePurchaseWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid var(--main-font-color);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.purchaseButton {
+  padding: 0px 30px 0px 30px;
+}
