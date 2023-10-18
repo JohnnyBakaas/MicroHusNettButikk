@@ -16,6 +16,10 @@ const Header = () => {
         <h1 className={styles.shortName}>BR</h1>
       </Link>
       <nav className={styles.nav}>
+        <Link to={"/test"}>
+          <h2>Test</h2>
+        </Link>
+
         <Link to={`/blog`}>
           <h2>Blog</h2>
         </Link>

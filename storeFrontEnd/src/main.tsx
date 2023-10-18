@@ -7,6 +7,7 @@ import Blog from "./routes/Blog.tsx";
 import Home from "./routes/Home.tsx";
 import Reisverk from "./routes/Reisverk.tsx";
 import Store from "./routes/Store.tsx";
+import StoreArticle from "./components/storeArticle/StoreArticle.tsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "store",
         element: <Store />,
+      },
+      {
+        path: "test",
+        element: <StoreArticle />,
       },
     ],
   },

@@ -1,5 +1,5 @@
-import StoreArticle, {
-  StoreArticlePros,
+import StoreArticleCard, {
+  StoreArticleCardPros,
 } from "../components/storeArticleCard/StoreArticleCard";
 import sryles from "./Store.module.css";
 
@@ -10,7 +10,7 @@ const Store = () => {
     "imgs/DALL·E 2023-10-16 09.48.27.png",
     "imgs/DALL·E 2023-10-16 09.48.28.png",
   ];
-  const data: StoreArticlePros[] = [
+  const data: StoreArticleCardPros[] = [
     {
       name: "Opos",
       images: [
@@ -49,7 +49,7 @@ const Store = () => {
   return (
     <main className={sryles.main}>
       {data.map((e, i) => (
-        <StoreArticle
+        <StoreArticleCard
           key={i}
           name={e.name}
           images={e.images}
