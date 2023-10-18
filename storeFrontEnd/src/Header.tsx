@@ -3,6 +3,7 @@ import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  //@ts-ignore
   const [darkMode, setDarkMode] = useState(true);
   useEffect(() => {
     const root = document.getElementById("root");

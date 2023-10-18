@@ -14,6 +14,7 @@ export type Paragraph = {
   headLine?: string;
   img?: string;
   text?: string;
+  html?: React.ReactNode;
 };
 
 const StoreArticle = () => {
@@ -96,6 +97,7 @@ Som et svar på boligkriser, miljøbekymringer og ønsket om enklere levende, re
           );
 
         if (e.text) return <p key={i}>{e.text}</p>;
+        if (e.html) return e.html;
       })}
     </main>
   );

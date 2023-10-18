@@ -4,6 +4,7 @@ import StoreArticleCard, {
 import sryles from "./Store.module.css";
 
 const Store = () => {
+  //@ts-ignore
   const imgLinkes = [
     "imgs/DALL·E 2023-10-16 09.48.25.png",
     "imgs/DALL·E 2023-10-16 09.48.26.png",
