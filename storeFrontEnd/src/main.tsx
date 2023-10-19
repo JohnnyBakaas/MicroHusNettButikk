@@ -7,7 +7,7 @@ import Blog from "./routes/Blog.tsx";
 import Home from "./routes/Home.tsx";
 import Reisverk from "./routes/Reisverk.tsx";
 import Store from "./routes/Store.tsx";
-import StoreArticle from "./components/storeArticle/StoreArticle.tsx";
+import StoreArticleWrapper from "./routes/StoreArticleWrapper.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "test",
-        element: <StoreArticle />,
+        element: <StoreArticleWrapper />,
+      },
+      {
+        path: "store/:hoseName",
+        element: <StoreArticleWrapper />,
       },
     ],
   },

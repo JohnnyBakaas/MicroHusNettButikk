@@ -26,11 +26,11 @@ const Header = () => {
         </Link>
 
         <Link to={`/store`}>
-          <h2>Kjøp</h2>
+          <h2>Modeller</h2>
         </Link>
 
         <Link to={`/reisverk`}>
-          <h2>Bestill</h2>
+          <h2>Custom</h2>
         </Link>
         {/*
         <button onClick={() => setDarkMode((pre) => !pre)}>
