@@ -48,7 +48,10 @@ Som et svar på boligkriser, miljøbekymringer og ønsket om enklere levende, re
 
   const found = data[0];
 
-  console.log(hoseName);
+  if (import.meta.env.DEV) {
+    console.log(hoseName);
+    console.log(import.meta.env.DEV);
+  }
 
   return (
     <StoreArticle

@@ -21,7 +21,6 @@ const StoreArticle = ({
   name,
   images,
   lowPrice,
-  highPrice,
   description,
   paragraphs,
 }: StoreArticleProps) => {

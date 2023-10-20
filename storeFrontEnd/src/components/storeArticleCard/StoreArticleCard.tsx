@@ -1,5 +1,6 @@
 import Carousel from "react-material-ui-carousel";
 import styles from "./StoreArticleCard.module.css";
+import { Link } from "react-router-dom";
 
 export type StoreArticleCardPros = {
   name: string;
@@ -28,9 +29,11 @@ const StoreArticleCard = ({
         ))}
       </Carousel>
       <div className={styles.textWrapper}>
-        <h2>{name}</h2>
-        <h3>Starter: {formatNumber(lowPrice)} kr</h3>
-        <p>{description}</p>
+        <Link to={`/store/${name}`}>
+          <h2>{name}</h2>
+          <h3>Starter: {formatNumber(lowPrice)} kr</h3>
+          <p>{description}</p>
+        </Link>
       </div>
     </div>
   );
