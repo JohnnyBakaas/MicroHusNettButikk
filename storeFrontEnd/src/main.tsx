@@ -8,6 +8,7 @@ import Home from "./routes/Home.tsx";
 import Reisverk from "./routes/Reisverk.tsx";
 import Store from "./routes/Store.tsx";
 import StoreArticleWrapper from "./routes/StoreArticleWrapper.tsx";
+import OrderPreDesignedHome from "./components/orderPreDesignedHome/OrderPreDesignedHome.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "test",
-        element: <StoreArticleWrapper />,
+        element: <OrderPreDesignedHome />,
       },
       {
         path: "store/:hoseName",

@@ -1,5 +1,6 @@
 import Carousel from "react-material-ui-carousel";
 import styles from "./StoreArticle.module.css";
+import ModelRenderer from "../modelRenderer/ModelRenderer";
 
 export type StoreArticleProps = {
   name: string;
@@ -15,6 +16,7 @@ export type Paragraph = {
   img?: string;
   text?: string;
   htmlElement?: React.ReactNode;
+  model?: string;
 };
 
 const StoreArticle = ({
@@ -66,6 +68,7 @@ const StoreArticle = ({
 
         if (e.text) return <p key={i}>{e.text}</p>;
         if (e.htmlElement) return e.htmlElement;
+        if (e.model) return <ModelRenderer modelURL={e.model} />;
       })}
     </main>
   );

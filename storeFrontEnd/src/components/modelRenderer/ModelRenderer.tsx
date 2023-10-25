@@ -3,15 +3,17 @@ import { OrbitControls } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 
-const ModelTest = () => {
+type ModelRendererProps = {
+  modelURL: string;
+};
+
+const ModelRenderer = ({ modelURL }: ModelRendererProps) => {
   return (
     <div>
       <Canvas camera={{ position: [150, 13, 10] }}>
         <ambientLight color="#ffffff" intensity={1} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <pointLight position={[10, 10, 10]} />
         <mesh>
-          <ObjModel url="/models/husXDDDD.obj" />
+          <ObjModel url={modelURL} />
           <meshStandardMaterial color="orange" />
         </mesh>
         <OrbitControls />
@@ -20,9 +22,13 @@ const ModelTest = () => {
   );
 };
 
-export default ModelTest;
+export default ModelRenderer;
 
-function ObjModel({ url }: any) {
+type ObjModelPros = {
+  url: string;
+};
+
+function ObjModel({ url }: ObjModelPros) {
   // @ts-ignore
   const obj = useLoader(OBJLoader, url);
   return <primitive object={obj} />;
